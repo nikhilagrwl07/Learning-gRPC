@@ -8,7 +8,6 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class AccountDatabase {
-
     /*
     This is db
     1 => 10
@@ -22,7 +21,7 @@ public class AccountDatabase {
             .boxed()
             .collect(Collectors.toMap(
                     Function.identity(),
-                    v -> v * 10
+                    v -> 100
             ));
 
     public static int getBalance(int accountNumber) {
@@ -35,5 +34,11 @@ public class AccountDatabase {
 
     public static Integer deductBalance(int accountNumber, int amount) {
         return MAP.computeIfPresent(accountNumber, (k, v) -> v - amount);
+    }
+
+    public static void printAccountDetails(){
+        System.out.println(
+                MAP
+        );
     }
 }
